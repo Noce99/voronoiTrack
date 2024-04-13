@@ -38,7 +38,7 @@ parser.add_argument("--cover", type=int, help="(bfs mode only) Percentage of the
 parser.add_argument("--span", type=int, help="(hull mode only) Percentage of the boundary area in which the hull is generated (default: 50).", default=50)
 parser.add_argument("-q", "--quiet", help="Disable plotting of the generated track.", default=False, action="store_true")
 parser.add_argument("-b", "--batch", help="Number of tracks to generate and save.\n " +
-                    "The generated tracks will be stored in " + track_dir +" in numpy array format (default: disabled). ", default=0, type=int)
+                    "The generated tracks will be stored in " + track_dir +" in numpy array format (default: disabled). ", default=1, type=int)
 
 args = parser.parse_args()
 i = 0

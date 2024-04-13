@@ -2,14 +2,7 @@ import argparse
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-
-def read_points(data):
-    xs = []
-    ys = []
-    for q in data:
-        xs.append(q[0])
-        ys.append(q[1])
-    return xs, ys
+from utils import read_points
 
 def plot(data, seed, width):
     xs, ys = read_points(data)
@@ -19,6 +12,7 @@ def plot(data, seed, width):
     axs.plot(xs, ys, c="r", lw=1)
     plt.gca().set_aspect('equal', adjustable='box')
     fig.suptitle("seed: " + str(seed))
+    plt.savefig(f"tracks/track_{seed}.png")
     plt.show()
 
 parser = argparse.ArgumentParser(description="Visualize a track previously stored in a file. If both -f and -s flags are present, only the -s one will be considered")
@@ -49,4 +43,8 @@ except IOError:
     exit()
 
 points = np.load(file)
+# print(points.shape)
+#print(points[:20, :])
 plot(points,seed, args.width)
+# from_poits_to_matrix(points)
+

@@ -1,0 +1,8 @@
+include
+lib
+lib64
+pyvenv.cfg
+bin
+generator/__pycache__/
+generator/tracks/
+generator/logs/seeds.log

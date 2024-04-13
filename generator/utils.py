@@ -34,3 +34,11 @@ def angle_of(q,center):
 	#engineer's method
     dx = 10**-10
     return (angle_3_points(q, center, [center[0] + dx, center[1]]))
+    
+def read_points(data):
+    xs = []
+    ys = []
+    for q in data:
+        xs.append(q[0])
+        ys.append(q[1])
+    return xs, ys
